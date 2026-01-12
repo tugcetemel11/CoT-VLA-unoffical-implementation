@@ -88,6 +88,7 @@ class VILAULlamaModel(VILAUMetaModel, VILAUMetaForCausalLM, PreTrainedModel):
         return_dict: Optional[bool] = None,
     ) -> Union[Tuple, CausalLMOutputWithPast]:
         if inputs_embeds is None:
+            
             (
                 input_ids,
                 position_ids,
@@ -103,6 +104,7 @@ class VILAULlamaModel(VILAUMetaModel, VILAUMetaForCausalLM, PreTrainedModel):
                 labels,
                 images,
             )
+            print(labels)
             
         if self.training:
             (
